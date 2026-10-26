@@ -15,7 +15,7 @@ const editButtonsClickHandler = (e) => {
   if (target.parentElement.matches("button.delete")) {
     deleteTask(target.closest("li"));
   }
-}
+};
 
 incompleteTaskHolder.addEventListener("click", editButtonsClickHandler);
 completedTasksHolder.addEventListener("click", editButtonsClickHandler);

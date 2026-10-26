@@ -29,6 +29,6 @@
   },
   "lint-staged": {
     "*.js": "npm run lint",
-    "*.{html,css,json,md,svg}": "npm run format"
+    "*.{js,html,css,json,md,svg}": "npm run format"
   }
 }
