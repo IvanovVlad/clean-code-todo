@@ -15,7 +15,9 @@
   "scripts": {
     "test": "echo 'bark bark'",
     "lint": "eslint",
-    "format": "prettier",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "prepare": "husky"
   },
   "devDependencies": {
