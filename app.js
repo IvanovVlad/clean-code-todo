@@ -54,7 +54,9 @@ const editTask = function () {
   const isInEditMode = listItem.classList.contains("edit-mode");
 
   if (isInEditMode) {
-    label.innerText = editInput.value;
+    const newName = editInput.value.trim();
+    if (!newName) return;
+    label.innerText = newName;
     editBtn.innerText = "Edit";
   } else {
     editInput.value = label.innerText;
