@@ -39,11 +39,15 @@ const createNewTaskElement = function (taskString) {
   const deleteButton = document.createElement("button");
   const deleteButtonImg = document.createElement("img");
 
+  const id = crypto.randomUUID();
+
   label.innerText = taskString;
   label.className = "task task-label";
+  label.htmlFor = `task-${id}`;
 
   checkBox.type = "checkbox";
   checkBox.className = "task-checkbox";
+  checkBox.id = `task-${id}`;
 
   editInput.type = "text";
   editInput.className = "task task-edit-input text-input";
