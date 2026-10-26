@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 //Document is the DOM can be accessed in the console with document.window.
 // Tree is from the top, html, body, p etc.
@@ -116,8 +116,7 @@ const taskIncomplete = function () {
   bindTaskEvents(listItem, taskCompleted);
 };
 
-const ajaxRequest = function () {
-};
+const ajaxRequest = function () {};
 
 //The glue to hold it all together.
 
