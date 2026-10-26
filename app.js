@@ -15,25 +15,24 @@ const createNewTaskElement = function (taskString) {
   const deleteButtonImg = document.createElement("img");
 
   label.innerText = taskString;
-  label.className = "task";
+  label.className = "task task-label";
 
   checkBox.type = "checkbox";
+  checkBox.className = "task-checkbox";
 
   editInput.type = "text";
-  editInput.className = "task";
+  editInput.className = "task task-edit-input text-input";
+  editInput.setAttribute("aria-label", "Edit task");
 
   editButton.innerText = "Edit";
   editButton.className = "edit";
 
   deleteButton.className = "delete";
   deleteButtonImg.src = "./remove.svg";
+  deleteButtonImg.alt = "Delete";
   deleteButton.appendChild(deleteButtonImg);
 
-  listItem.appendChild(checkBox);
-  listItem.appendChild(label);
-  listItem.appendChild(editInput);
-  listItem.appendChild(editButton);
-  listItem.appendChild(deleteButton);
+  listItem.append(checkBox, label, editInput, editButton, deleteButton);
   return listItem;
 };
 
@@ -49,10 +48,10 @@ const addTask = function () {
 const editTask = function () {
   const listItem = this.parentNode;
 
-  const editInput = listItem.querySelector("input[type=text]");
-  const label = listItem.querySelector("label");
+  const editInput = listItem.querySelector(".task-edit-input");
+  const label = listItem.querySelector(".task-label");
   const editBtn = listItem.querySelector(".edit");
-  const isInEditMode = listItem.classList.contains("editMode");
+  const isInEditMode = listItem.classList.contains("edit-mode");
 
   if (isInEditMode) {
     label.innerText = editInput.value;
@@ -62,7 +61,7 @@ const editTask = function () {
     editBtn.innerText = "Save";
   }
 
-  listItem.classList.toggle("editMode");
+  listItem.classList.toggle("edit-mode");
 };
 
 const deleteTask = function () {
@@ -86,7 +85,7 @@ const taskIncomplete = function () {
 addButton.onclick = addTask;
 
 const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
-  const checkBox = taskListItem.querySelector("input[type=checkbox]");
+  const checkBox = taskListItem.querySelector(".task-checkbox");
   const editButton = taskListItem.querySelector("button.edit");
   const deleteButton = taskListItem.querySelector("button.delete");
 
