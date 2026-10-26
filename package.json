@@ -13,7 +13,6 @@
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "test": "echo 'bark bark'",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "format": "prettier --check .",
@@ -29,8 +28,7 @@
     "prettier": "^3.9.10"
   },
   "lint-staged": {
-    "*": [
-      "npm run test"
-    ]
+    "*.js": "npm run lint",
+    "*.{html,css,json,md,svg}": "npm run format"
   }
 }
