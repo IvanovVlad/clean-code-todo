@@ -26,18 +26,26 @@
       <h3>Todo</h3>
       <ul id="incompleteTasks">
         <li>
-          <input type="checkbox" /><label class="task">Pay Bills</label
-          ><input type="text" class="task" /><button class="edit">Edit</button
+          <input type="checkbox" id="task-1" /><label class="task" for="task-1"
+            >Pay Bills</label
+          >
+          <input type="text" class="task" aria-label="Edit task" /><button
+            class="edit"
+          >
+            Edit</button
           ><button class="delete">
             <img src="./remove.svg" alt="Delete" />
           </button>
         </li>
         <li class="editMode">
-          <input type="checkbox" /><label class="task">Go Shopping</label
-          ><input type="text" value="Go Shopping" class="task" /><button
-            class="edit"
-          >
-            Save</button
+          <input type="checkbox" id="task-2" /><label class="task" for="task-2"
+            >Go Shopping</label
+          ><input
+            type="text"
+            value="Go Shopping"
+            class="task"
+            aria-label="Edit task"
+          /><button class="edit">Save</button
           ><button class="delete">
             <img src="./remove.svg" alt="Delete" />
           </button>
@@ -46,9 +54,14 @@
       <h3>Completed</h3>
       <ul id="completed-tasks">
         <li>
-          <input type="checkbox" checked /><label class="task"
+          <input type="checkbox" id="task-3" checked /><label
+            class="task"
+            for="task-3"
             >See the Doctor</label
-          ><input type="text" class="task" /><button class="edit">Edit</button
+          ><input type="text" class="task" aria-label="Edit task" /><button
+            class="edit"
+          >
+            Edit</button
           ><button class="delete">
             <img src="./remove.svg" alt="Delete" />
           </button>
